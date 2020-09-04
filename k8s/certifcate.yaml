@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: sobolobo-com-tls
+spec:
+  secretName: sobolobo-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: sobolobo.com
+  dnsNames:
+    - sobolobo.com
+    - wwww.sobolobo.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - sobolobo.com
+          - wwww.sobolobo.com
