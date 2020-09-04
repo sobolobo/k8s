@@ -17,10 +17,9 @@ before_install:
   - gcloud container clusters get-credentials multi-cluster
   - docker login -u "$DOCKER_USERNAME"  -p "$DOCKER_PASSWORD" docker.io
   - docker  build -t jalil/react-test -f ./client/Dockerfile.dev ./client
-  - docker push jalil/react-test
 
 script:
-  - docker run -e CI=true jalil/docker-react npm test
+  - docker run -e CI=true jalil/react-test npm test
 
 deploy:
   provider: script
