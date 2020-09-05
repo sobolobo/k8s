@@ -10,11 +10,11 @@ spec:
   commonName: sobolobo.com
   dnsNames:
     - sobolobo.com
-    - wwww.sobolobo.com
+    - www.sobolobo.com
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
           - sobolobo.com
-          - wwww.sobolobo.com
+          - www.sobolobo.com
